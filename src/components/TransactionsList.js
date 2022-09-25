@@ -1,8 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({transactionObj}) {
-  let transactionRows = transactions.map(transactions => <Transaction key= {transactionObj}) />
+function TransactionsList({transactions }) {
 
   return (
     <table className="ui celled striped padded table">
@@ -22,6 +21,11 @@ function TransactionsList({transactionObj}) {
           </th>
         </tr>
         {/* render a list of <Transaction> components here */}
+      
+        {transactions.map(transactionObj =>
+          <Transaction
+            key={transactionObj.id}
+            transactionObj={transactionObj} />)}
       </tbody>
     </table>
   );

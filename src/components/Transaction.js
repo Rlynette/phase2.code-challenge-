@@ -1,16 +1,14 @@
 import React from "react";
 
-function Transaction(transactions) {
+function Transaction({ transactionObj }) {
   
-  console.log(transa)
-  const
-
+  const { date, description, category, amount } = transactionObj;
   return (
-    <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+     <tr > 
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
     </tr>
   );
 }
