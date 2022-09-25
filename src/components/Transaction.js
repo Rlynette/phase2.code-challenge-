@@ -1,6 +1,10 @@
 import React from "react";
 
-function Transaction() {
+function Transaction(transactions) {
+  
+  console.log(transa)
+  const
+
   return (
     <tr>
       <td>{"your code here..."}</td>

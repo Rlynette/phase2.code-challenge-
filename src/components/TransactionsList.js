@@ -1,7 +1,9 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList() {
+function TransactionsList({transactionObj}) {
+  let transactionRows = transactions.map(transactions => <Transaction key= {transactionObj}) />
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
