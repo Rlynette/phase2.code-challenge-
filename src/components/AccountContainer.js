@@ -4,7 +4,13 @@ import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 
 function AccountContainer() {
-  return (
+  
+  const[transactions,setTransactions]=React.useState([]);
+  ReactuseEffect(()=>
+    fetch("http://localhost:8001/transactions")
+    .then(resp => resp.json())
+    .then(result => console.log(result))
+    return (
     <div>
       <Search />
       <AddTransactionForm />
