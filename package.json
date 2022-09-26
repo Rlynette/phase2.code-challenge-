@@ -1,5 +1,5 @@
 {
-  "homepage":"http://Rlynette.github.io/phase2.code-challenge",
+  "homepage": "http://Rlynette.github.io/phase2.code-challenge",
   "name": "react-hooks-bank-of-flatiron-code-challenge",
   "version": "0.1.0",
   "private": true,
@@ -15,8 +15,9 @@
   },
   "scripts": {
     "start": "PORT=8000 react-scripts start",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "server": "json-server --watch db.json -p 8001"
   },
   "eslintConfig": {
