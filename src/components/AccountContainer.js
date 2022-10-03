@@ -35,15 +35,40 @@ function handleSearch(event) {
     val.description.toLowerCase().includes(searching)));
  }
   
+ function handleSort(e) {
+  let criteria = e.target.textContent.toLowerCase();
+  function compare( a, b ) {
+    if ( a[criteria].toLowerCase() < b[criteria].toLowerCase() ){
+      return -1;
+    }
+    if ( a[criteria].toLowerCase() > b[criteria].toLowerCase() ){
+      return 1;
+    }
+    return 0;
+  }
+  console.log("Hello")
+  setTransactions([...transactions.sort( compare )]);
+}
+
+  function handleDeletion(id){
+    fetch(`http://localhost:8001/transactions/${id}`,{
+      method:"DELETE"
+    })
+    .then(()=>dataFetch());
+  }
+
     return (
         <div>
-          <Search  handleSearch={handleSearch} />
+          <Search handleSearch={handleSearch} />
           <AddTransactionForm  submit={onSubmit} />
-          <TransactionsList transactions={transactions}  />
+          <TransactionsList 
+          transactions={transactions}
+          handleSort={handleSort}
+          handleDeletion={handleDeletion}
+          />
         </div>
-      );
-    }
-
+    );
+  }
     
 export default AccountContainer;
 

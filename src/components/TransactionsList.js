@@ -1,7 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({transactions }) {
+function TransactionsList({transactions, handleSort, handleDeletion}) {
 
   return (
     <table className="ui celled striped padded table">
@@ -25,7 +25,9 @@ function TransactionsList({transactions }) {
         {transactions.map(transactionObj =>
           <Transaction
             key={transactionObj.id}
-            transactionObj={transactionObj} />)}
+            transactionObj={transactionObj}
+            handleSort={handleSort}
+            handleDeletion={handleDeletion} />)}
       </tbody>
     </table>
   );

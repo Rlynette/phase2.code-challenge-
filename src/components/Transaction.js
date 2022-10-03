@@ -1,10 +1,10 @@
 import React from "react";
 
-function Transaction({ transactionObj }) {
+function Transaction({ transactionObj, handleDeletion }) {
   
-  const { date, description, category, amount } = transactionObj;
+  const { id,date, description, category, amount } = transactionObj;
   return (
-     <tr > 
+     <tr onClick={()=>handleDeletion(id)}>
       <td>{date}</td>
       <td>{description}</td>
       <td>{category}</td>
